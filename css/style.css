@@ -18982,6 +18982,7 @@ section {
 
 .flipster--coverflow .flipster__container {
   padding-bottom: 0;
+  min-height: 250px !important;
 }
 
 .flipster--coverflow .flipster__item__content {
