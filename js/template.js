@@ -164,7 +164,7 @@ function saveContact(){
 		email: mail,
 		mensagem:message
 	}, function() {
-		alert( "Obrigado! Entraremos em contato com você em até 24 horas." );
+		$('#ignismyModal').modal('show')
 	  })
 		.fail(function() {
 		  alert( "Preencha todos os campos corretamente." );
