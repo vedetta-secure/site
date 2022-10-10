@@ -143,5 +143,33 @@
 		runbP();
 		//blog post
 
+		function saveContact(){
+			var name = $("#name").val();
+			var mail = $("#mail").val();
+			var companyname = $("#companyname").val();
+			var phone = $("#phone").val();
+			var message = $("#message").val();
+
+			var jqxhr = $.post( "https://api.pluga.co/v1/webhooks/MzkxODk2NzcwMDc5MzA4Njg1M1QxNjY1MzY0NDMz", {
+				name: name,
+				company:companyname,
+				phone: phone,
+				email: mail,
+				mensagem:message
+			}, function() {
+				alert( "success" );
+			  })
+				.done(function() {
+				  alert( "second success" );
+				})
+				.fail(function() {
+				  alert( "error" );
+				})
+				.always(function() {
+				  alert( "finished" );
+				});
+			   
+		}
+
 	});
 })(jQuery);
