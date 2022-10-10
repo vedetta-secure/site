@@ -164,16 +164,9 @@ function saveContact(){
 		email: mail,
 		mensagem:message
 	}, function() {
-		alert( "success" );
+		alert( "Obrigado! Entraremos em contato com você em até 24 horas." );
 	  })
-		.done(function() {
-		  alert( "second success" );
-		})
 		.fail(function() {
-		  alert( "error" );
-		})
-		.always(function() {
-		  alert( "finished" );
-		});
-	   
+		  alert( "Preencha todos os campos corretamente." );
+		});	   
 }
