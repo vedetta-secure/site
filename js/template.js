@@ -157,26 +157,32 @@ function saveContact() {
 	var phone = $("#phone").val();
 	var message = $("#message").val();
 
-	var jqxhr = $.post("https://api.pluga.co/v1/webhooks/MzkxODk2NzcwMDc5MzA4Njg1M1QxNjY1MzY0NDMz", {
-		name: name,
-		company: companyname,
-		phone: phone,
-		email: mail,
-		mensagem: message
-	}, function () {
-		$('#ignismyModal').modal('show');
-		$("#name").val('');
-		$("#mail").val('');
-		$("#companyname").val('');
-		$("#phone").val('');
-		$("#message").val('');
-	})
-		.fail(function () {
-			$('#ignismyModal2').modal('show');
+	if (name != '' && mail != '' && companyname != '' && phone != '' && message != '' &&
+		name != null && mail != null && companyname != null && phone != null && message != null) {
+
+		var jqxhr = $.post("https://api.pluga.co/v1/webhooks/MzkxODk2NzcwMDc5MzA4Njg1M1QxNjY1MzY0NDMz", {
+			name: name,
+			company: companyname,
+			phone: phone,
+			email: mail,
+			mensagem: message
+		}, function () {
+			$('#ignismyModal').modal('show');
 			$("#name").val('');
 			$("#mail").val('');
 			$("#companyname").val('');
 			$("#phone").val('');
 			$("#message").val('');
-		});
+		})
+			.fail(function () {
+				$('#ignismyModal2').modal('show');
+				$("#name").val('');
+				$("#mail").val('');
+				$("#companyname").val('');
+				$("#phone").val('');
+				$("#message").val('');
+			});
+	} else {
+		$('#ignismyModal2').modal('show');
+	}
 }
