@@ -10827,7 +10827,7 @@ fieldset:disabled a.btn {
 }
 
 .btn-secondary {
-  color: #fff;
+  color: #fff !important;
   background-color: #004aad;
   border-color: #004aad;
 }
