@@ -171,7 +171,7 @@
 			   
 		}
 
-		$("#sendbtn").click(saveContact());
+		$("#sendbtn").on('click', saveContact());
 
 	});
 })(jQuery);
