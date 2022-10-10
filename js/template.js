@@ -171,5 +171,7 @@
 			   
 		}
 
+		$("#sendbtn").click(saveContact());
+
 	});
 })(jQuery);
